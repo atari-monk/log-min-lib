@@ -3,7 +3,6 @@ using CRUDCommandHelper;
 using DataToTable;
 using Log.Min.Data;
 using Serilog;
-using ModelHelper;
 
 namespace Log.Min.Lib;
 
