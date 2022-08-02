@@ -3,6 +3,7 @@ using CRUDCommandHelper;
 using DataToTable;
 using Log.Min.Data;
 using Serilog;
+using ModelHelper;
 
 namespace Log.Min.Lib;
 
@@ -24,7 +25,17 @@ public class LogReadCommand
 
     protected override List<LogModel> Get(LogFilterArgs model)
     {
-        return UnitOfWork.Log.GetLog(
+        var list = UnitOfWork.Log.GetLog(
             filterFactory.GetFilter(model)).ToList();
+        foreach (var item in list)
+        {
+            Output.WriteLine(GetMsg(item));
+        }
+        return list;
+    }
+
+    private string GetMsg(LogModel item)
+    {
+        return $"log ins x \"{item.Description}\" 1 \"{item.Start?.ToString(LogFilterArgs.DateFormat)}\" \"{item.End?.ToString(LogFilterArgs.DateFormat)}\"";
     }
 }
