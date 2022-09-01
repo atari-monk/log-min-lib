@@ -35,6 +35,6 @@ public class LogReadCommand
 
     private string GetMsg(LogModel item)
     {
-        return $"log ins x \"{item.Description}\" 1 \"{item.Start?.ToString(LogFilterArgs.DateFormat)}\" \"{item.End?.ToString(LogFilterArgs.DateFormat)}\"";
+        return $"log ins x \"{item.Description}\" 1 \"{item.Start?.ToString(LogFilterArgs.DateTimeFormat)}\" \"{item.End?.ToString(LogFilterArgs.DateTimeFormat)}\"";
     }
 }

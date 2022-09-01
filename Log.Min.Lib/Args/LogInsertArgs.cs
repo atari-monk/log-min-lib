@@ -13,10 +13,10 @@ public class  LogInsertArgs
     public string? Description { get; set; }
 
     [Operand(nameof(Start)
-        , Description = DateFormat)]
+        , Description = DateTimeFormat)]
     public DateTime? Start { get; set; } = DateTime.Now;
 
     [Operand(nameof(End)
-        , Description = DateFormat)]
+        , Description = DateTimeFormat)]
     public DateTime? End { get; set; }
 }

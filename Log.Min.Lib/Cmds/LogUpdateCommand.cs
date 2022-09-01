@@ -17,5 +17,5 @@ public class LogUpdateCommand
     }
 
     protected override LogModel GetById(int id) =>
-        UnitOfWork.Log.GetByID(id);
+        UnitOfWork.Log.GetById(id) ?? new LogModel();
 }

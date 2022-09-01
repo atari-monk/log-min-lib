@@ -20,5 +20,5 @@ public class LogDeleteCommand
         UnitOfWork.Log.Delete(entity);
 
     protected override LogModel GetById(int id) =>
-        UnitOfWork.Log.GetByID(id);
+        UnitOfWork.Log.GetById(id) ?? new LogModel();
 }
